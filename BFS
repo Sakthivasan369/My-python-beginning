@@ -1,0 +1,18 @@
+graph={'1':['2','3'],'2':['4','5'],'3':['6','7'],'4':['12'],'5':[],'6':[],'7':[],'12':[]}
+vis=[];que=[]
+def bfs(vis,graph,node):
+    vis.append(node)
+    que.append(node)
+    while que:
+        m=que.pop(0)
+        print(m,end=" ")
+        for neigh in graph[m]:
+            if neigh not in vis:
+                vis.append(neigh)
+                que.append(neigh)
+print(bfs(vis,graph,'1'))
+---------------------------------------------------------------------------------------------------------
+Output
+1 2 3 4 5 6 7 12 None
+
+=== Code Execution Successful ===
